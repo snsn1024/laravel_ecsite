@@ -14,5 +14,8 @@
 		</div>
 		@endforeach
 	</div>
+	<div class="row justfy-content-center">
+		{{$items->links()}}
+	</div>
 </div>
 @endsection
