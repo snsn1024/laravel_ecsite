@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container">
-	<div class="row justfy-content-left">
-		@foreach ($items as $item)
-		<div class="col-md-4 mb-2">
+	<div class="row justfy-content-center">
+		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
 					<a href="/item/{{$item->id}}">{{$item->name}}</a>
@@ -14,10 +13,6 @@
 				</div>
 			</div>
 		</div>
-		@endforeach
 	</div>
-	<div class="row justfy-content-center">
-		{{$items->appends(['keyword' => Request::get('keyword')])->links() }}
-			</div>
 </div>
 @endsection
