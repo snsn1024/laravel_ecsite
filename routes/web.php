@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ItemController@index');
+Route::get('/item/{item}', 'ItemController@show');
+
+Route::get('/cartitem', 'CartItemController@index');
+Route::post('/cartitem', 'CartItemController@store');
+Route::put('/cartitem/{cartItem}', 'CartItemController@update');
+Route::delete('cartitem/{cartItem}', 'CartItemController@destroy');
+
+Route::get('/buy', 'BuyController@index');
+Route::post('/buy', 'BuyController@store');
 
 Auth::routes();
 
